@@ -1,16 +1,16 @@
 Name:		bluelatex
-Version:	1.0.0
+Version:	1.0.1
 Release:	1%{?dist}
 Summary:	Real-Time Collaborative Document Edition
 
 Group:		Applications/Editors
 License:	ASL 2.0
 URL:		http://www.bluelatex.org	
-Source0:	https://github.com/gnieh/bluelatex/archive/v1.0.0.tar.gz
+Source0:	https://github.com/gnieh/bluelatex/archive/v1.0.1.tar.gz
 Source1:	build.sbt
 
-BuildRequires:	sbt, java-1.7.0-openjdk-devel, systemd
-Requires:	java-1.7.0-openjdk, couchdb
+BuildRequires:	sbt, java-devel >= 1.7, systemd
+Requires:	couchdb, java >= 1.7
 Requires:	texlive-collection-latexrecommended, texlive-collection-fontsrecommended
 Requires:	texlive-xetex
 
@@ -61,5 +61,13 @@ install -m 0755 init/systemd/bluelatex.service %{buildroot}/%{_unitdir}
 %doc
 
 %changelog
+* Sun Oct 12 2014 Olivier Bonhomme <obonhomme@nerim.net> 1.0.1-1 
+- Update to 1.0.1 upstream version
+- Improve messages (issues #138, #134)
+- Disallow ":" in username (issue #139)
+- Simplify the use of the web client (issue #135, #143, #146)
+- Fix other small but annoying bugs
+- Fix a lot of typo
+
 * Wed Sep 24 2014 Olivier Bonhomme <obonhomme@nerim.net> 1.0.0-1 
 - Initial RPM release
