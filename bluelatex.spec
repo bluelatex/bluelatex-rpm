@@ -1,12 +1,12 @@
 Name:		bluelatex
-Version:	1.0.1
+Version:	1.0.2
 Release:	1%{?dist}
 Summary:	Real-Time Collaborative Document Edition
 
 Group:		Applications/Editors
 License:	ASL 2.0
 URL:		http://www.bluelatex.org	
-Source0:	https://github.com/gnieh/bluelatex/archive/v1.0.1.tar.gz
+Source0:	https://github.com/gnieh/bluelatex/archive/v%{version}.tar.gz
 Source1:	build.sbt
 
 BuildRequires:	sbt, java-devel >= 1.7, systemd
@@ -61,6 +61,12 @@ install -m 0755 init/systemd/bluelatex.service %{buildroot}/%{_unitdir}
 %doc
 
 %changelog
+* Wed Nov 05 2014 Olivier Bonhomme <obonhomme@nerim.net> 1.0.2-1
+- Update to 1.0.2 upstream version
+- Fix a regression in paper option (issue #156)
+- Make 'clone' and 'report issue' links configurable (issue #161)
+- Add an update script (issue #155)
+
 * Sun Oct 12 2014 Olivier Bonhomme <obonhomme@nerim.net> 1.0.1-1 
 - Update to 1.0.1 upstream version
 - Improve messages (issues #138, #134)
