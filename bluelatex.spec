@@ -1,5 +1,5 @@
 Name:		bluelatex
-Version:	1.0.2
+Version:	1.0.3
 Release:	1%{?dist}
 Summary:	Real-Time Collaborative Document Edition
 
@@ -61,6 +61,12 @@ install -m 0755 init/systemd/bluelatex.service %{buildroot}/%{_unitdir}
 %doc
 
 %changelog
+* Tue Nov 18 2014 Olivier Bonhomme <obonhomme@nerim.net> 1.0.3-1
+- Update to 1.0.3 upstream version
+- Add button to cleanup compilation directory (issue #173)
+- Reload pdf file when compilation failed but produced a new pdf file (issue #168)
+- Fix regression bug in web client making it impossible to modify user settings (issue #175)
+
 * Wed Nov 05 2014 Olivier Bonhomme <obonhomme@nerim.net> 1.0.2-1
 - Update to 1.0.2 upstream version
 - Fix a regression in paper option (issue #156)
