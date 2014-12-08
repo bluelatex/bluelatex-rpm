@@ -1,5 +1,5 @@
 Name:		bluelatex
-Version:	1.0.3
+Version:	1.0.4
 Release:	1%{?dist}
 Summary:	Real-Time Collaborative Document Edition
 
@@ -61,6 +61,16 @@ install -m 0755 init/systemd/bluelatex.service %{buildroot}/%{_unitdir}
 %doc
 
 %changelog
+* Sat Dec 06 2014 Olivier Bonhomme <obonhomme@nerim.net> 1.0.4-1
+- Update to 1.0.4 upstream version
+- Main fix: Fix Bug in the synchronization protocol on the server side, and improve the user experience on the client side.
+- Fix the guarantee delivery part in case of disconnection or high latency network (issue #188)
+- Hold the scroll position when several authors are editing a file concurrently (issue #185)
+- Restore cursor position when changing file (issue #181)
+- Fix script loading order to avoid display problems on slow networks (issue #189)
+- Reenable use of standard key binings in web browser (issue #171)
+- Fix PDF rendering on small displays (issue #182)
+
 * Tue Nov 18 2014 Olivier Bonhomme <obonhomme@nerim.net> 1.0.3-1
 - Update to 1.0.3 upstream version
 - Add button to cleanup compilation directory (issue #173)
