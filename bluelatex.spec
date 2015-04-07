@@ -1,5 +1,5 @@
 Name:		bluelatex
-Version:	1.0.4
+Version:	1.0.5
 Release:	1%{?dist}
 Summary:	Real-Time Collaborative Document Edition
 
@@ -61,6 +61,14 @@ install -m 0755 init/systemd/bluelatex.service %{buildroot}/%{_unitdir}
 %doc
 
 %changelog
+* Wed Apr 01 2015 Olivier Bonhomme <obonhomme@nerim.net> 1.0.5-1
+- Update to 1.0.5 upstream version
+- Fix synchronization bug that may lead to data loss (issue #188)
+- Fix cursor appearing in multiple files (issue #196)
+- Fix persistent cursor after an author left the paper (issue #195)
+- Cleanup error and wraning upon compilation (issue #201)
+- Improvements in the UI
+
 * Sat Dec 06 2014 Olivier Bonhomme <obonhomme@nerim.net> 1.0.4-1
 - Update to 1.0.4 upstream version
 - Main fix: Fix Bug in the synchronization protocol on the server side, and improve the user experience on the client side.
